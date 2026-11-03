@@ -130,5 +130,6 @@ El PDF se puede abrir con el visor de documentos o navegador del equipo.
 
 `resultados_demo/` conserva las ejecuciones reales de la demostración anterior.
 `VERIFICACION_ENTREGA.md` registra los controles realizados sobre esta carpeta final.
-`REPOSITORIO.md` explica el estado real del repositorio local y la publicación pendiente.
+`REPOSITORIO.md` explica el historial local y la publicación verificada en el
+repositorio privado https://github.com/Jhomnsito/sistemas-operativos.
 El historial local asistido no acredita retrospectivamente los aportes del equipo.

@@ -17,8 +17,10 @@ evidencias reales en `APORTES.md`.
 
 La conexión de GitHub quedó verificada para la cuenta `Jhomnsito` mediante el
 conector autenticado. El usuario creó el repositorio remoto privado con un
-README inicial. Se comprobó acceso de lectura y escritura antes de preparar
-la carga del código, el informe y las evidencias.
+README inicial. Se comprobó acceso de lectura y escritura y se publicó el código,
+el informe y las evidencias en `main`. Se verificó la integridad de los 66 archivos
+comparando el árbol Git remoto con los hashes calculados desde la carpeta local.
+También se comprobaron el manifiesto y el PDF leídos desde la rama publicada.
 
 La carga asistida conserva como antecedente el commit inicial del repositorio
 remoto. El historial Git local de la preparación se conserva además en el ZIP;

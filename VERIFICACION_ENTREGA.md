@@ -18,5 +18,8 @@ Las ejecuciones originales y las de la demostración anterior se conservan en
 
 La conexión autenticada de GitHub y el repositorio privado fueron comprobados.
 Destino: https://github.com/Jhomnsito/sistemas-operativos.
+Se verificó la coincidencia del árbol Git remoto con el contenido de los 66
+archivos locales. También se leyeron desde la rama `main` el manifiesto y el PDF
+y se comprobaron sus hashes. La publicación se realizó con asistencia de IA.
 El historial local documenta esta preparación asistida, sin atribuir aportes
 históricos a integrantes que todavía no los hayan descrito.

@@ -41,7 +41,8 @@ los tres archivos originales ni sustituye la comprensión y participación del e
 La carpeta final añade accesos de ejecución, demostraciones reproducibles y un
 repositorio local preparado con asistencia de Codex. Ese registro inicial
 documenta esta preparación real; no acredita trabajo previo de los integrantes.
-La publicación remota en GitHub debe verificarse según `REPOSITORIO.md`.
+La publicación remota quedó verificada en el repositorio privado
+https://github.com/Jhomnsito/sistemas-operativos. Consulta `REPOSITORIO.md`.
 
 Antes de registrar una aportación, cada integrante debe ejecutar el código,
 revisar los resultados y describir el cambio o validación que realmente realizó.

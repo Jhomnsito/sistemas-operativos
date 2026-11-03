@@ -158,7 +158,7 @@ La revisión del ZIP original confirmó que sus tres escenarios se ejecutaban y 
 
 Se utilizó asistencia de IA mediante Codex para revisión, corrección, ampliación, pruebas y documentación. APORTES.md identifica esta asistencia y contiene el espacio para registrar únicamente integrantes y contribuciones reales. El equipo debe verificar, comprender y poder explicar toda la versión, conforme al apartado 8 de las instrucciones del curso [4].
 
-El equipo está integrado por Esteban Peña y Andrés Gámez. Sigue pendiente completar la trazabilidad de sus aportes con evidencias reales y colocar código, informe y resultados en su repositorio o carpeta compartida. Tampoco se pudo acreditar la revisión de semana 8 ni la sustentación individual. El guion para dos integrantes propone una distribución de la exposición; no constituye un registro de trabajo ya realizado.
+El equipo está integrado por Esteban Peña y Andrés Gámez. El código, el informe y las evidencias están disponibles en el repositorio privado https://github.com/Jhomnsito/sistemas-operativos. Sigue pendiente completar la trazabilidad de sus aportes con evidencias reales y dar acceso al profesor cuando corresponda. No se pudo acreditar la revisión de semana 8 ni la sustentación individual. El guion propone una distribución de la exposición y no constituye un registro de trabajo ya realizado.
 
 ### Referencias
 
