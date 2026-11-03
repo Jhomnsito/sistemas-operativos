@@ -1,5 +1,11 @@
 # Sistemas Operativos
 
+**Inicio recomendado:** haz doble clic en `ABRIR_APLICACION.cmd` para abrir el
+laboratorio visual. En una sola pantalla puedes configurar procesos, comparar
+FCFS y Round Robin, reproducir la línea de tiempo y ejecutar las 27 pruebas
+del simulador y la aplicación. Consulta `LEEME_APLICACION.md` para presentar el
+proyecto. Usa el mismo motor de simulación, sin paquetes externos.
+
 Simulador de planificación de CPU. Compara FCFS y Round Robin en una CPU simulada. Conserva los tres escenarios
 del proyecto original y añade E/S y tiempos ociosos para validar los estados.
 

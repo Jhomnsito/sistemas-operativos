@@ -3,6 +3,15 @@
 Equipo: **Esteban Peña y Andrés Gámez**.
 Tema: gestión de procesos y planificación de CPU, opción 1.
 
+## Presentación visual recomendada
+
+Abre **ABRIR_APLICACION.cmd**. El navegador reúne escenarios, tablas,
+reproducción de CPU, estados y un botón para ejecutar las 27 pruebas actuales
+(19 del simulador y 8 de integración). Mantén abierta la ventana del servidor.
+Lee `LEEME_APLICACION.md`: es la guía breve para presentar esta versión.
+
+Los accesos de consola siguientes son alternativas y conservan su comportamiento.
+
 ## Abrir y ejecutar en Windows
 
 1. Extrae completamente `sistemas_operativos_actualizado.zip`. No ejecutes los
