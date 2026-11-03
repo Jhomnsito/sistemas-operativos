@@ -1,0 +1,157 @@
+scenario,algorithm,time,pid,state,reason
+E1,FCFS,0,1,NUEVO,Creación del proceso simulado
+E1,FCFS,0,2,NUEVO,Creación del proceso simulado
+E1,FCFS,0,3,NUEVO,Creación del proceso simulado
+E1,FCFS,0,4,NUEVO,Creación del proceso simulado
+E1,FCFS,0,1,LISTO,Llegada
+E1,FCFS,0,1,EJECUCION,Despacho de CPU
+E1,FCFS,1,2,LISTO,Llegada
+E1,FCFS,2,3,LISTO,Llegada
+E1,FCFS,3,4,LISTO,Llegada
+E1,FCFS,5,1,FINALIZADO,CPU total completada
+E1,FCFS,5,2,EJECUCION,Despacho de CPU
+E1,FCFS,8,2,FINALIZADO,CPU total completada
+E1,FCFS,8,3,EJECUCION,Despacho de CPU
+E1,FCFS,16,3,FINALIZADO,CPU total completada
+E1,FCFS,16,4,EJECUCION,Despacho de CPU
+E1,FCFS,22,4,FINALIZADO,CPU total completada
+E1,RR Q=3,0,1,NUEVO,Creación del proceso simulado
+E1,RR Q=3,0,2,NUEVO,Creación del proceso simulado
+E1,RR Q=3,0,3,NUEVO,Creación del proceso simulado
+E1,RR Q=3,0,4,NUEVO,Creación del proceso simulado
+E1,RR Q=3,0,1,LISTO,Llegada
+E1,RR Q=3,0,1,EJECUCION,Despacho de CPU
+E1,RR Q=3,1,2,LISTO,Llegada
+E1,RR Q=3,2,3,LISTO,Llegada
+E1,RR Q=3,3,4,LISTO,Llegada
+E1,RR Q=3,3,1,LISTO,Fin de quantum
+E1,RR Q=3,3,2,EJECUCION,Despacho de CPU
+E1,RR Q=3,6,2,FINALIZADO,CPU total completada
+E1,RR Q=3,6,3,EJECUCION,Despacho de CPU
+E1,RR Q=3,9,3,LISTO,Fin de quantum
+E1,RR Q=3,9,4,EJECUCION,Despacho de CPU
+E1,RR Q=3,12,4,LISTO,Fin de quantum
+E1,RR Q=3,12,1,EJECUCION,Despacho de CPU
+E1,RR Q=3,14,1,FINALIZADO,CPU total completada
+E1,RR Q=3,14,3,EJECUCION,Despacho de CPU
+E1,RR Q=3,17,3,LISTO,Fin de quantum
+E1,RR Q=3,17,4,EJECUCION,Despacho de CPU
+E1,RR Q=3,20,4,FINALIZADO,CPU total completada
+E1,RR Q=3,20,3,EJECUCION,Despacho de CPU
+E1,RR Q=3,22,3,FINALIZADO,CPU total completada
+E2,FCFS,0,1,NUEVO,Creación del proceso simulado
+E2,FCFS,0,2,NUEVO,Creación del proceso simulado
+E2,FCFS,0,3,NUEVO,Creación del proceso simulado
+E2,FCFS,0,1,LISTO,Llegada
+E2,FCFS,0,1,EJECUCION,Despacho de CPU
+E2,FCFS,1,2,LISTO,Llegada
+E2,FCFS,2,3,LISTO,Llegada
+E2,FCFS,12,1,FINALIZADO,CPU total completada
+E2,FCFS,12,2,EJECUCION,Despacho de CPU
+E2,FCFS,14,2,FINALIZADO,CPU total completada
+E2,FCFS,14,3,EJECUCION,Despacho de CPU
+E2,FCFS,18,3,FINALIZADO,CPU total completada
+E2,RR Q=3,0,1,NUEVO,Creación del proceso simulado
+E2,RR Q=3,0,2,NUEVO,Creación del proceso simulado
+E2,RR Q=3,0,3,NUEVO,Creación del proceso simulado
+E2,RR Q=3,0,1,LISTO,Llegada
+E2,RR Q=3,0,1,EJECUCION,Despacho de CPU
+E2,RR Q=3,1,2,LISTO,Llegada
+E2,RR Q=3,2,3,LISTO,Llegada
+E2,RR Q=3,3,1,LISTO,Fin de quantum
+E2,RR Q=3,3,2,EJECUCION,Despacho de CPU
+E2,RR Q=3,5,2,FINALIZADO,CPU total completada
+E2,RR Q=3,5,3,EJECUCION,Despacho de CPU
+E2,RR Q=3,8,3,LISTO,Fin de quantum
+E2,RR Q=3,8,1,EJECUCION,Despacho de CPU
+E2,RR Q=3,11,1,LISTO,Fin de quantum
+E2,RR Q=3,11,3,EJECUCION,Despacho de CPU
+E2,RR Q=3,12,3,FINALIZADO,CPU total completada
+E2,RR Q=3,12,1,EJECUCION,Despacho de CPU
+E2,RR Q=3,15,1,LISTO,Fin de quantum
+E2,RR Q=3,15,1,EJECUCION,Despacho de CPU
+E2,RR Q=3,18,1,FINALIZADO,CPU total completada
+E3,FCFS,0,1,NUEVO,Creación del proceso simulado
+E3,FCFS,0,2,NUEVO,Creación del proceso simulado
+E3,FCFS,0,3,NUEVO,Creación del proceso simulado
+E3,FCFS,0,1,LISTO,Llegada
+E3,FCFS,0,2,LISTO,Llegada
+E3,FCFS,0,3,LISTO,Llegada
+E3,FCFS,0,1,EJECUCION,Despacho de CPU
+E3,FCFS,4,1,FINALIZADO,CPU total completada
+E3,FCFS,4,2,EJECUCION,Despacho de CPU
+E3,FCFS,10,2,FINALIZADO,CPU total completada
+E3,FCFS,10,3,EJECUCION,Despacho de CPU
+E3,FCFS,18,3,FINALIZADO,CPU total completada
+E3,RR Q=4,0,1,NUEVO,Creación del proceso simulado
+E3,RR Q=4,0,2,NUEVO,Creación del proceso simulado
+E3,RR Q=4,0,3,NUEVO,Creación del proceso simulado
+E3,RR Q=4,0,1,LISTO,Llegada
+E3,RR Q=4,0,2,LISTO,Llegada
+E3,RR Q=4,0,3,LISTO,Llegada
+E3,RR Q=4,0,1,EJECUCION,Despacho de CPU
+E3,RR Q=4,4,1,FINALIZADO,CPU total completada
+E3,RR Q=4,4,2,EJECUCION,Despacho de CPU
+E3,RR Q=4,8,2,LISTO,Fin de quantum
+E3,RR Q=4,8,3,EJECUCION,Despacho de CPU
+E3,RR Q=4,12,3,LISTO,Fin de quantum
+E3,RR Q=4,12,2,EJECUCION,Despacho de CPU
+E3,RR Q=4,14,2,FINALIZADO,CPU total completada
+E3,RR Q=4,14,3,EJECUCION,Despacho de CPU
+E3,RR Q=4,18,3,FINALIZADO,CPU total completada
+E4,FCFS,0,1,NUEVO,Creación del proceso simulado
+E4,FCFS,0,2,NUEVO,Creación del proceso simulado
+E4,FCFS,0,3,NUEVO,Creación del proceso simulado
+E4,FCFS,0,1,LISTO,Llegada
+E4,FCFS,0,1,EJECUCION,Despacho de CPU
+E4,FCFS,1,2,LISTO,Llegada
+E4,FCFS,2,3,LISTO,Llegada
+E4,FCFS,2,1,BLOQUEADO,Inicio de E/S
+E4,FCFS,2,2,EJECUCION,Despacho de CPU
+E4,FCFS,6,1,LISTO,Fin de E/S
+E4,FCFS,7,2,FINALIZADO,CPU total completada
+E4,FCFS,7,3,EJECUCION,Despacho de CPU
+E4,FCFS,10,3,FINALIZADO,CPU total completada
+E4,FCFS,10,1,EJECUCION,Despacho de CPU
+E4,FCFS,14,1,FINALIZADO,CPU total completada
+E4,RR Q=2,0,1,NUEVO,Creación del proceso simulado
+E4,RR Q=2,0,2,NUEVO,Creación del proceso simulado
+E4,RR Q=2,0,3,NUEVO,Creación del proceso simulado
+E4,RR Q=2,0,1,LISTO,Llegada
+E4,RR Q=2,0,1,EJECUCION,Despacho de CPU
+E4,RR Q=2,1,2,LISTO,Llegada
+E4,RR Q=2,2,3,LISTO,Llegada
+E4,RR Q=2,2,1,BLOQUEADO,Inicio de E/S
+E4,RR Q=2,2,2,EJECUCION,Despacho de CPU
+E4,RR Q=2,4,2,LISTO,Fin de quantum
+E4,RR Q=2,4,3,EJECUCION,Despacho de CPU
+E4,RR Q=2,6,1,LISTO,Fin de E/S
+E4,RR Q=2,6,3,LISTO,Fin de quantum
+E4,RR Q=2,6,2,EJECUCION,Despacho de CPU
+E4,RR Q=2,8,2,LISTO,Fin de quantum
+E4,RR Q=2,8,1,EJECUCION,Despacho de CPU
+E4,RR Q=2,10,1,LISTO,Fin de quantum
+E4,RR Q=2,10,3,EJECUCION,Despacho de CPU
+E4,RR Q=2,11,3,FINALIZADO,CPU total completada
+E4,RR Q=2,11,2,EJECUCION,Despacho de CPU
+E4,RR Q=2,12,2,FINALIZADO,CPU total completada
+E4,RR Q=2,12,1,EJECUCION,Despacho de CPU
+E4,RR Q=2,14,1,FINALIZADO,CPU total completada
+E5,FCFS,0,1,NUEVO,Creación del proceso simulado
+E5,FCFS,0,2,NUEVO,Creación del proceso simulado
+E5,FCFS,3,1,LISTO,Llegada
+E5,FCFS,3,1,EJECUCION,Despacho de CPU
+E5,FCFS,5,1,FINALIZADO,CPU total completada
+E5,FCFS,10,2,LISTO,Llegada
+E5,FCFS,10,2,EJECUCION,Despacho de CPU
+E5,FCFS,13,2,FINALIZADO,CPU total completada
+E5,RR Q=2,0,1,NUEVO,Creación del proceso simulado
+E5,RR Q=2,0,2,NUEVO,Creación del proceso simulado
+E5,RR Q=2,3,1,LISTO,Llegada
+E5,RR Q=2,3,1,EJECUCION,Despacho de CPU
+E5,RR Q=2,5,1,FINALIZADO,CPU total completada
+E5,RR Q=2,10,2,LISTO,Llegada
+E5,RR Q=2,10,2,EJECUCION,Despacho de CPU
+E5,RR Q=2,12,2,LISTO,Fin de quantum
+E5,RR Q=2,12,2,EJECUCION,Despacho de CPU
+E5,RR Q=2,13,2,FINALIZADO,CPU total completada

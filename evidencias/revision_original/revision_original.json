@@ -1,0 +1,44 @@
+{
+  "main_exit_code": 0,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "probes": {
+    "remaining_fcfs": {
+      "exit_code": 0,
+      "stdout": "FINALIZADO 5\n",
+      "stderr": ""
+    },
+    "reporte_vacio": {
+      "exit_code": 1,
+      "stdout": "\n==================================================\n REPORTE DE RESULTADOS: vacio\n==================================================\nPID    Llegada    Ráfaga     Espera     Retorno    Respuesta \n--------------------------------------------------\n",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"C:\\Users\\esteb\\Documents\\Codex\\2026-11-02\\cyberpunk-2077-redmod\\work\\revision\\original\\sistemas operativos\\algorithms.py\", line 94, in print_comparison_report\n    avg_waiting = total_waiting / num_processes\n                  ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~\nZeroDivisionError: division by zero\n"
+    },
+    "llegada_negativa": {
+      "exit_code": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    "rafaga_negativa": {
+      "exit_code": 0,
+      "stdout": "-3 -3\n",
+      "stderr": ""
+    },
+    "quantum_cero": {
+      "timeout_seconds": 1,
+      "result": "No termino; proceso de prueba interrumpido."
+    },
+    "quantum_negativo": {
+      "timeout_seconds": 1,
+      "result": "No termino; proceso de prueba interrumpido."
+    },
+    "reutilizar_rr": {
+      "exit_code": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    }
+  },
+  "sha256": {
+    "algorithms.py": "0db58d5d205c06be41a74527df5b7f2cc2e2d8aa714a8dfb26257f30b92c6a4b",
+    "main.py": "6e5e0eb033e538d63c7406bee77fff7a34c51c2650191a651b36b030c0bfd12b",
+    "models.py": "c0554f1e955f1a2918512aa94d8a90527a321c19b604ba75dbb29d19d9992235"
+  }
+}

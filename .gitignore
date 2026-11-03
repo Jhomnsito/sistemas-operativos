@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+evidencias_nuevas/
+demo/
+
+resultados_en_vivo/
+.ejecucion_temporal/

@@ -1,0 +1,10 @@
+{
+  "action": "pruebas",
+  "command": [
+    "C:\\Users\\esteb\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-u",
+    "demostracion_pruebas.py"
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "description": "Ejecución nueva realizada con este lanzador."
+}
