@@ -1,6 +1,0 @@
-VALIDACION EJECUTADA
-Compatibilidad: 6 ejecuciones originales, métricas por proceso idénticas.
-CSV: 10 ejecuciones; promedios y tiempos recalculados desde registros exportados.
-Conservación de CPU por proceso, continuidad de estados y finalización verificadas.
-Error de salida no escribible como carpeta: código de salida 1 y mensaje legible.
-Error: [WinError 183] No se puede crear un archivo que ya existe: 'C:\\Users\\esteb\\Documents\\Codex\\2026-11-02\\cyberpunk-2077-redmod\\work\\revision\\destino_no_es_carpeta.txt'

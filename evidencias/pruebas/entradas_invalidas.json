@@ -1,0 +1,122 @@
+[
+  {
+    "case": "quantum_cero",
+    "input": {
+      "processes": [
+        {
+          "pid": 1,
+          "arrival": 0,
+          "cpu": 12,
+          "io": []
+        },
+        {
+          "pid": 2,
+          "arrival": 1,
+          "cpu": 2,
+          "io": []
+        },
+        {
+          "pid": 3,
+          "arrival": 2,
+          "cpu": 4,
+          "io": []
+        }
+      ],
+      "quantum": 0
+    },
+    "status": 400,
+    "response": {
+      "error": "El quantum debe ser un entero entre 1 y 1000."
+    }
+  },
+  {
+    "case": "pid_repetido",
+    "input": {
+      "processes": [
+        {
+          "pid": 1,
+          "arrival": 0,
+          "cpu": 12,
+          "io": []
+        },
+        {
+          "pid": 1,
+          "arrival": 1,
+          "cpu": 2,
+          "io": []
+        },
+        {
+          "pid": 3,
+          "arrival": 2,
+          "cpu": 4,
+          "io": []
+        }
+      ],
+      "quantum": 3
+    },
+    "status": 400,
+    "response": {
+      "error": "Los PID deben ser únicos dentro de un escenario."
+    }
+  },
+  {
+    "case": "llegada_negativa",
+    "input": {
+      "processes": [
+        {
+          "pid": 1,
+          "arrival": -1,
+          "cpu": 12,
+          "io": []
+        },
+        {
+          "pid": 2,
+          "arrival": 1,
+          "cpu": 2,
+          "io": []
+        },
+        {
+          "pid": 3,
+          "arrival": 2,
+          "cpu": 4,
+          "io": []
+        }
+      ],
+      "quantum": 3
+    },
+    "status": 400,
+    "response": {
+      "error": "PID, llegada y CPU deben ser enteros de hasta 1000."
+    }
+  },
+  {
+    "case": "cpu_fraccionaria",
+    "input": {
+      "processes": [
+        {
+          "pid": 1,
+          "arrival": 0,
+          "cpu": 1.5,
+          "io": []
+        },
+        {
+          "pid": 2,
+          "arrival": 1,
+          "cpu": 2,
+          "io": []
+        },
+        {
+          "pid": 3,
+          "arrival": 2,
+          "cpu": 4,
+          "io": []
+        }
+      ],
+      "quantum": 3
+    },
+    "status": 400,
+    "response": {
+      "error": "PID, llegada y CPU deben ser enteros de hasta 1000."
+    }
+  }
+]

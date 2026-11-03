@@ -1,6 +1,6 @@
 @echo off
 setlocal
-cd /d "%~dp0"
+cd /d "%~dp0codigo"
 py -3 -c "import sys; sys.exit(sys.version_info < (3, 10))" >nul 2>&1
 if not errorlevel 1 (
     py -3 app_visual.py %*
@@ -15,7 +15,7 @@ if not errorlevel 1 (
     python app_visual.py %*
     goto :fin
 )
-echo No se encontro Python 3.10 o posterior. Consulta INICIO_RAPIDO.md.
+echo No se encontro Python 3.10 o posterior. Consulta README.md.
 set "SO_RESULT=1"
 goto :cerrar
 :fin

@@ -1,0 +1,345 @@
+{
+  "kind": "comparison",
+  "timestamp": "2026-11-03T18:32:58.304167-05:00",
+  "input": {
+    "processes": [
+      {
+        "pid": 1,
+        "arrival": 0,
+        "cpu": 4,
+        "io": []
+      },
+      {
+        "pid": 2,
+        "arrival": 0,
+        "cpu": 6,
+        "io": []
+      },
+      {
+        "pid": 3,
+        "arrival": 0,
+        "cpu": 8,
+        "io": []
+      }
+    ],
+    "quantum": 4
+  },
+  "results": [
+    {
+      "algorithm": "FCFS",
+      "metrics": {
+        "processes": 3,
+        "avg_waiting": 4.666666666666667,
+        "avg_turnaround": 10.666666666666666,
+        "avg_response": 4.666666666666667,
+        "max_waiting": 10,
+        "max_response": 10,
+        "context_switches": 2,
+        "dispatches": 3,
+        "end_time": 18,
+        "busy_time": 18,
+        "utilization_percent": 100.0,
+        "throughput": 0.16666666666666666
+      },
+      "timeline": [
+        {
+          "start": 0,
+          "end": 4,
+          "pid": 1
+        },
+        {
+          "start": 4,
+          "end": 10,
+          "pid": 2
+        },
+        {
+          "start": 10,
+          "end": 18,
+          "pid": 3
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "pid": 1,
+          "state": "NUEVO",
+          "reason": "Creación del proceso simulado"
+        },
+        {
+          "time": 0,
+          "pid": 2,
+          "state": "NUEVO",
+          "reason": "Creación del proceso simulado"
+        },
+        {
+          "time": 0,
+          "pid": 3,
+          "state": "NUEVO",
+          "reason": "Creación del proceso simulado"
+        },
+        {
+          "time": 0,
+          "pid": 1,
+          "state": "LISTO",
+          "reason": "Llegada"
+        },
+        {
+          "time": 0,
+          "pid": 2,
+          "state": "LISTO",
+          "reason": "Llegada"
+        },
+        {
+          "time": 0,
+          "pid": 3,
+          "state": "LISTO",
+          "reason": "Llegada"
+        },
+        {
+          "time": 0,
+          "pid": 1,
+          "state": "EJECUCION",
+          "reason": "Despacho de CPU"
+        },
+        {
+          "time": 4,
+          "pid": 1,
+          "state": "FINALIZADO",
+          "reason": "CPU total completada"
+        },
+        {
+          "time": 4,
+          "pid": 2,
+          "state": "EJECUCION",
+          "reason": "Despacho de CPU"
+        },
+        {
+          "time": 10,
+          "pid": 2,
+          "state": "FINALIZADO",
+          "reason": "CPU total completada"
+        },
+        {
+          "time": 10,
+          "pid": 3,
+          "state": "EJECUCION",
+          "reason": "Despacho de CPU"
+        },
+        {
+          "time": 18,
+          "pid": 3,
+          "state": "FINALIZADO",
+          "reason": "CPU total completada"
+        }
+      ],
+      "processes": [
+        {
+          "pid": 1,
+          "arrival": 0,
+          "cpu": 4,
+          "blocked": 0,
+          "finish": 4,
+          "waiting": 0,
+          "response": 0,
+          "turnaround": 4
+        },
+        {
+          "pid": 2,
+          "arrival": 0,
+          "cpu": 6,
+          "blocked": 0,
+          "finish": 10,
+          "waiting": 4,
+          "response": 4,
+          "turnaround": 10
+        },
+        {
+          "pid": 3,
+          "arrival": 0,
+          "cpu": 8,
+          "blocked": 0,
+          "finish": 18,
+          "waiting": 10,
+          "response": 10,
+          "turnaround": 18
+        }
+      ]
+    },
+    {
+      "algorithm": "RR Q=4",
+      "metrics": {
+        "processes": 3,
+        "avg_waiting": 6.0,
+        "avg_turnaround": 12.0,
+        "avg_response": 4.0,
+        "max_waiting": 10,
+        "max_response": 8,
+        "context_switches": 4,
+        "dispatches": 5,
+        "end_time": 18,
+        "busy_time": 18,
+        "utilization_percent": 100.0,
+        "throughput": 0.16666666666666666
+      },
+      "timeline": [
+        {
+          "start": 0,
+          "end": 4,
+          "pid": 1
+        },
+        {
+          "start": 4,
+          "end": 8,
+          "pid": 2
+        },
+        {
+          "start": 8,
+          "end": 12,
+          "pid": 3
+        },
+        {
+          "start": 12,
+          "end": 14,
+          "pid": 2
+        },
+        {
+          "start": 14,
+          "end": 18,
+          "pid": 3
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "pid": 1,
+          "state": "NUEVO",
+          "reason": "Creación del proceso simulado"
+        },
+        {
+          "time": 0,
+          "pid": 2,
+          "state": "NUEVO",
+          "reason": "Creación del proceso simulado"
+        },
+        {
+          "time": 0,
+          "pid": 3,
+          "state": "NUEVO",
+          "reason": "Creación del proceso simulado"
+        },
+        {
+          "time": 0,
+          "pid": 1,
+          "state": "LISTO",
+          "reason": "Llegada"
+        },
+        {
+          "time": 0,
+          "pid": 2,
+          "state": "LISTO",
+          "reason": "Llegada"
+        },
+        {
+          "time": 0,
+          "pid": 3,
+          "state": "LISTO",
+          "reason": "Llegada"
+        },
+        {
+          "time": 0,
+          "pid": 1,
+          "state": "EJECUCION",
+          "reason": "Despacho de CPU"
+        },
+        {
+          "time": 4,
+          "pid": 1,
+          "state": "FINALIZADO",
+          "reason": "CPU total completada"
+        },
+        {
+          "time": 4,
+          "pid": 2,
+          "state": "EJECUCION",
+          "reason": "Despacho de CPU"
+        },
+        {
+          "time": 8,
+          "pid": 2,
+          "state": "LISTO",
+          "reason": "Fin de quantum"
+        },
+        {
+          "time": 8,
+          "pid": 3,
+          "state": "EJECUCION",
+          "reason": "Despacho de CPU"
+        },
+        {
+          "time": 12,
+          "pid": 3,
+          "state": "LISTO",
+          "reason": "Fin de quantum"
+        },
+        {
+          "time": 12,
+          "pid": 2,
+          "state": "EJECUCION",
+          "reason": "Despacho de CPU"
+        },
+        {
+          "time": 14,
+          "pid": 2,
+          "state": "FINALIZADO",
+          "reason": "CPU total completada"
+        },
+        {
+          "time": 14,
+          "pid": 3,
+          "state": "EJECUCION",
+          "reason": "Despacho de CPU"
+        },
+        {
+          "time": 18,
+          "pid": 3,
+          "state": "FINALIZADO",
+          "reason": "CPU total completada"
+        }
+      ],
+      "processes": [
+        {
+          "pid": 1,
+          "arrival": 0,
+          "cpu": 4,
+          "blocked": 0,
+          "finish": 4,
+          "waiting": 0,
+          "response": 0,
+          "turnaround": 4
+        },
+        {
+          "pid": 2,
+          "arrival": 0,
+          "cpu": 6,
+          "blocked": 0,
+          "finish": 14,
+          "waiting": 8,
+          "response": 4,
+          "turnaround": 14
+        },
+        {
+          "pid": 3,
+          "arrival": 0,
+          "cpu": 8,
+          "blocked": 0,
+          "finish": 18,
+          "waiting": 10,
+          "response": 8,
+          "turnaround": 18
+        }
+      ]
+    }
+  ],
+  "units": "Unidades de tiempo simulado; una CPU; costo de cambio de contexto cero.",
+  "evidence": "C:\\Users\\esteb\\Documents\\Codex\\2026-11-02\\cyberpunk-2077-redmod\\outputs\\sistemas_operativos\\resultados_en_vivo\\20261103_183258_304167_visual_comparacion"
+}
