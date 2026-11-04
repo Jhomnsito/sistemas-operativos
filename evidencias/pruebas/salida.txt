@@ -1,32 +1,67 @@
-test_200_generated_cases_against_tick_oracle (test_simulator.SimulatorTests.test_200_generated_cases_against_tick_oracle) ... ok
-test_all_scenarios_invariants (test_simulator.SimulatorTests.test_all_scenarios_invariants) ... ok
-test_arrival_on_quantum_boundary (test_simulator.SimulatorTests.test_arrival_on_quantum_boundary) ... ok
-test_bad_io (test_simulator.SimulatorTests.test_bad_io) ... ok
-test_bad_process (test_simulator.SimulatorTests.test_bad_process) ... ok
-test_bad_quantum (test_simulator.SimulatorTests.test_bad_quantum) ... ok
-test_duplicate_pid_and_type (test_simulator.SimulatorTests.test_duplicate_pid_and_type) ... ok
-test_empty (test_simulator.SimulatorTests.test_empty) ... ok
-test_fcfs_manual (test_simulator.SimulatorTests.test_fcfs_manual) ... ok
-test_idle (test_simulator.SimulatorTests.test_idle) ... ok
-test_io_manual (test_simulator.SimulatorTests.test_io_manual) ... ok
-test_io_on_quantum_boundary (test_simulator.SimulatorTests.test_io_on_quantum_boundary) ... ok
-test_large_quantum_matches_fcfs (test_simulator.SimulatorTests.test_large_quantum_matches_fcfs) ... ok
-test_multiple_io (test_simulator.SimulatorTests.test_multiple_io) ... ok
-test_one_process_rr (test_simulator.SimulatorTests.test_one_process_rr) ... ok
-test_reuse_does_not_mutate_input (test_simulator.SimulatorTests.test_reuse_does_not_mutate_input) ... ok
-test_rr_manual (test_simulator.SimulatorTests.test_rr_manual) ... ok
-test_simultaneous_unblock_and_arrival (test_simulator.SimulatorTests.test_simultaneous_unblock_and_arrival) ... ok
-test_stable_arrival_ties (test_simulator.SimulatorTests.test_stable_arrival_ties) ... ok
-test_duplicate_pid_is_rejected (test_app_visual.AppTests.test_duplicate_pid_is_rejected) ... ok
-test_foreign_origin_is_rejected (test_app_visual.AppTests.test_foreign_origin_is_rejected) ... ok
-test_fractional_input_is_rejected (test_app_visual.AppTests.test_fractional_input_is_rejected) ... ok
-test_io_input_is_preserved (test_app_visual.AppTests.test_io_input_is_preserved) ... ok
-test_manual_example_over_http (test_app_visual.AppTests.test_manual_example_over_http) ... ok
-test_page_and_presets (test_app_visual.AppTests.test_page_and_presets) ... ok
-test_unknown_path_does_not_serve_files (test_app_visual.AppTests.test_unknown_path_does_not_serve_files) ... ok
-test_zero_quantum_is_rejected (test_app_visual.AppTests.test_zero_quantum_is_rejected) ... ok
+test_200_generated_cases_against_tick_oracle (test_simulator.SimulatorTests.test_200_generated_cases_against_tick_oracle)
+Compara 200 cargas y cuatro configuraciones con un modelo independiente por ticks. ... ok
+test_all_scenarios_invariants (test_simulator.SimulatorTests.test_all_scenarios_invariants)
+Verifica conservación de CPU, métricas y finalización de todas las cargas definidas. ... ok
+test_arrival_on_quantum_boundary (test_simulator.SimulatorTests.test_arrival_on_quantum_boundary)
+Verifica admisión de una llegada en el límite exacto del turno. ... ok
+test_bad_io (test_simulator.SimulatorTests.test_bad_io)
+Rechaza puntos E/S mal formados, no crecientes o fuera del trabajo CPU. ... ok
+test_bad_process (test_simulator.SimulatorTests.test_bad_process)
+Rechaza especificaciones de proceso inválidas. ... ok
+test_bad_quantum (test_simulator.SimulatorTests.test_bad_quantum)
+Rechaza quantum nulo, negativo o de tipo inválido. ... ok
+test_duplicate_pid_and_type (test_simulator.SimulatorTests.test_duplicate_pid_and_type)
+Rechaza PID repetidos y elementos que no son Process. ... ok
+test_empty (test_simulator.SimulatorTests.test_empty)
+Verifica resultados y reporte de una carga vacía sin división entre cero. ... ok
+test_fcfs_manual (test_simulator.SimulatorTests.test_fcfs_manual)
+Compara tiempos de FCFS con un caso resuelto a mano. ... ok
+test_idle (test_simulator.SimulatorTests.test_idle)
+Verifica tramos ociosos, espera nula y utilización desde el instante cero. ... ok
+test_io_manual (test_simulator.SimulatorTests.test_io_manual)
+Verifica un bloqueo y sus estados contra un cálculo manual. ... ok
+test_io_on_quantum_boundary (test_simulator.SimulatorTests.test_io_on_quantum_boundary)
+Verifica el bloqueo coincidente con el final del quantum. ... ok
+test_large_quantum_matches_fcfs (test_simulator.SimulatorTests.test_large_quantum_matches_fcfs)
+Comprueba equivalencia de RR con quantum suficiente y FCFS. ... ok
+test_multiple_io (test_simulator.SimulatorTests.test_multiple_io)
+Comprueba que un proceso complete varias esperas de E/S. ... ok
+test_one_process_rr (test_simulator.SimulatorTests.test_one_process_rr)
+Comprueba varios despachos de un único proceso sin falsos cambios de contexto. ... ok
+test_reuse_does_not_mutate_input (test_simulator.SimulatorTests.test_reuse_does_not_mutate_input)
+Repite cargas para comprobar independencia y ausencia de mutaciones de entrada. ... ok
+test_rr_manual (test_simulator.SimulatorTests.test_rr_manual)
+Compara tiempos de RR con un caso resuelto a mano. ... ok
+test_simultaneous_unblock_and_arrival (test_simulator.SimulatorTests.test_simultaneous_unblock_and_arrival)
+Comprueba el orden de llegada y desbloqueo en un mismo instante. ... ok
+test_stable_arrival_ties (test_simulator.SimulatorTests.test_stable_arrival_ties)
+Comprueba que llegadas empatadas conserven orden de entrada. ... ok
+test_duplicate_pid_is_rejected (test_app_visual.AppTests.test_duplicate_pid_is_rejected)
+Comprueba que dos procesos con igual PID no se admiten. ... ok
+test_excessive_cpu_is_rejected_before_simulation (test_app_visual.AppTests.test_excessive_cpu_is_rejected_before_simulation)
+Rechaza una carga visual que supera el límite total de CPU. ... ok
+test_foreign_origin_is_rejected (test_app_visual.AppTests.test_foreign_origin_is_rejected)
+Rechaza una solicitud procedente de un origen distinto del servidor local. ... ok
+test_fractional_input_is_rejected (test_app_visual.AppTests.test_fractional_input_is_rejected)
+Rechaza CPU fraccionaria cuando el modelo requiere tiempos enteros. ... ok
+test_invalid_encoding_returns_readable_error (test_app_visual.AppTests.test_invalid_encoding_returns_readable_error)
+Comprueba que bytes no UTF-8 reciben un error JSON en vez de cortar la conexión. ... ok
+test_io_input_is_preserved (test_app_visual.AppTests.test_io_input_is_preserved)
+Comprueba bloqueo de cuatro unidades y transiciones BLOQUEADO para E4. ... ok
+test_manual_example_over_http (test_app_visual.AppTests.test_manual_example_over_http)
+Verifica por HTTP las esperas manuales de P2 y conservación de 18 unidades CPU. ... ok
+test_missing_resource_returns_readable_error (test_app_visual.AppTests.test_missing_resource_returns_readable_error)
+Comprueba respuesta JSON 500 si falta un archivo necesario para la interfaz. ... ok
+test_page_and_presets (test_app_visual.AppTests.test_page_and_presets)
+Comprueba acceso a la página y presencia de los cinco escenarios. ... ok
+test_script_and_stylesheet_are_served (test_app_visual.AppTests.test_script_and_stylesheet_are_served)
+Verifica que JavaScript y CSS separados sean accesibles como recursos explícitos. ... ok
+test_unknown_path_does_not_serve_files (test_app_visual.AppTests.test_unknown_path_does_not_serve_files)
+Verifica que rutas arbitrarias no expongan archivos del proyecto. ... ok
+test_zero_quantum_is_rejected (test_app_visual.AppTests.test_zero_quantum_is_rejected)
+Comprueba el rechazo HTTP de quantum cero. ... ok
 
 ----------------------------------------------------------------------
-Ran 27 tests in 0.818s
+Ran 31 tests in 1.196s
 
 OK

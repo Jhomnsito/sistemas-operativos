@@ -1,6 +1,6 @@
 {
   "kind": "comparison",
-  "timestamp": "2026-11-03T18:32:46.644011-05:00",
+  "timestamp": "2026-11-04T14:11:47.012727-05:00",
   "input": {
     "processes": [
       {
@@ -459,5 +459,5 @@
     }
   ],
   "units": "Unidades de tiempo simulado; una CPU; costo de cambio de contexto cero.",
-  "evidence": "C:\\Users\\esteb\\Documents\\Codex\\2026-11-02\\cyberpunk-2077-redmod\\outputs\\sistemas_operativos\\resultados_en_vivo\\20261103_183246_644011_visual_comparacion"
+  "evidence": "C:\\Users\\esteb\\Documents\\Codex\\2026-11-02\\cyberpunk-2077-redmod\\outputs\\sistemas_operativos\\resultados_en_vivo\\20261104_141147_012727_visual_comparacion"
 }

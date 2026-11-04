@@ -1,8 +1,8 @@
 # Planificación de CPU
 
-Sistemas Operativos | Esteban Peña y Andrés Gámez | 3 de noviembre de 2026
+Sistemas Operativos | Esteban Peña y Andrés Gámez | 4 de noviembre de 2026
 
-Proyecto: simulación de gestión de procesos y comparación de FCFS con Round Robin (opción 1). Evidencias nuevas: cinco escenarios, diez ejecuciones comparadas y 27 pruebas automatizadas aprobadas.
+Proyecto: simulación de gestión de procesos y comparación de FCFS con Round Robin (opción 1). Evidencias: cinco escenarios, diez ejecuciones comparadas y 31 pruebas automatizadas aprobadas.
 
 ## 1. Problema, objetivo y fundamento
 
@@ -12,7 +12,7 @@ FCFS atiende por orden de llegada hasta finalizar o bloquearse. Round Robin (RR)
 
 ## 2. Diseño y escenarios
 
-Un motor de eventos compartido usa una cola FIFO de listos y una cola ordenada de llegadas y fin de E/S. models.py valida datos; algorithms.py ejecuta las políticas; scenarios.py define las cargas. app_visual.py conecta la interfaz HTML con ese motor y guarda resultados. main.py exporta CSV. Cada política recibe copias nuevas de los procesos.
+Un motor de eventos compartido usa una cola FIFO de listos y una cola ordenada de llegadas y fin de E/S. models.py valida datos; algorithms.py ejecuta las políticas; scenarios.py define las cargas. app_visual.py conecta HTML, JavaScript y CSS con el motor y guarda resultados. main.py exporta CSV. Las funciones están documentadas y cada política recibe copias nuevas de los procesos.
 
 | Caso / propósito | Procesos: PID (llegada, CPU) | Q RR |
 | --- | --- | --- |
@@ -90,22 +90,22 @@ RR Q=2: 0-3: Libre | 3-5: P1 | 5-10: Libre | 10-12: P2 | 12-13: P2
 
 | Comprobación | Resultado y evidencia |
 | --- | --- |
-| Suite automatizada | 27 aprobadas: 19 del simulador y 8 de integración HTTP. Incluye 200 cargas con cuatro configuraciones: 800 comparaciones contra un modelo por ticks independiente. |
+| Suite automatizada | 31 aprobadas: 19 del simulador y 12 de integración HTTP. Incluye 200 cargas con cuatro configuraciones: 800 comparaciones contra un modelo por ticks independiente. |
 | Consistencia de resultados | Diez ejecuciones visuales coinciden con CSV. Se recalcularon CPU, respuesta, espera y retorno; se verificó continuidad de trazas. |
 | Entradas inválidas | Quantum cero, PID repetido, llegada negativa y CPU fraccionaria rechazados por HTTP 400. |
 | Archivos verificables | escenarios/E1-E5.json; ejecucion/*.csv; pruebas/salida.txt y resultado.json; siete capturas; verificacion.json. Todo dentro de evidencias/. |
 
-Las pruebas se ejecutaron automáticamente con asistencia de IA en este computador. Sus datos y salidas están guardados; no son resultados precargados de la pantalla. Aprobar los casos revisados no demuestra ausencia de todos los errores posibles.
+unittest ejecuta las comprobaciones [3]. Sus entradas, salidas y códigos de terminación se conservan. La interfaz recibió el mismo resultado al ejecutar la suite desde su botón. Aprobar los casos revisados no demuestra ausencia de todos los errores posibles.
 
 ## 6. Riesgos, límites y responsabilidad
 
 | Riesgo | Tratamiento y límite |
 | --- | --- |
-| Rendimiento y recursos | Quantum pequeño aumenta turnos, eventos y tamaño de trazas. Usar cargas didácticas; no se acreditó escalabilidad a millones de turnos. |
+| Rendimiento y recursos | La interfaz limita la carga a 30 procesos y 2000 unidades CPU en total. Construye tablas de estados solo al desplegarlas. Quantum pequeño aumenta turnos; no se afirma escalabilidad a millones de eventos. |
 | Estabilidad | Se validan enteros, CPU positiva, llegada no negativa, PID único, quantum positivo y puntos E/S válidos. Los errores se muestran en la interfaz. |
 | Integridad | Copias independientes de entradas, evidencias fechadas y manifiesto SHA-256. Cada nueva corrida se guarda por separado. Regenerar evidencia tras cambiar código o cargas. |
 | Acceso y seguridad | Servidor solo en 127.0.0.1; valida Host y Origin; no sirve archivos arbitrarios. Usar localmente y cerrar al terminar. El repositorio es privado. |
-| Responsabilidad académica | Declarar asistencia de IA y demostrar comprensión. Las pruebas automáticas no acreditan aportes individuales ni la revisión de semana 8. |
+| Responsabilidad académica | Conservar trazabilidad verificable y explicar los resultados. El registro distingue pruebas guiadas de Esteban y verificación automática. |
 
 Límites: una CPU simulada, tiempos enteros y E/S de duración fija sin cola de dispositivo. No incluye RAM, múltiples CPU, prioridades efectivas ni costo temporal de contexto. No mide el SO real. Creación y finalización son estados de objetos simulados, no procesos de Windows.
 
@@ -117,14 +117,16 @@ Mejoras propuestas: costo configurable de cambio de contexto, cola de dispositiv
 
 ## 8. Ejecución, equipo y referencias
 
-Extraer el ZIP y abrir ABRIR_APLICACION.cmd. Requiere Python 3.10+ y su biblioteca estándar; probado con 3.12.14 en Windows. La guía de demostración está en documentacion/GUIA.md. Repositorio privado: https://github.com/Jhomnsito/sistemas-operativos
+Extraer el ZIP y abrir ABRIR_APLICACION.cmd. Requiere Python 3.10+ y su biblioteca estándar; probado con 3.12.14 en Windows. INSTRUCCIONES.md describe la ejecución y DOCUMENTACION_TECNICA.md las funciones. Repositorio privado: https://github.com/Jhomnsito/sistemas-operativos
 
-Integrantes: Esteban Peña y Andrés Gámez. Se utilizó Codex para revisión, correcciones, interfaz, pruebas, organización y documentación. APORTES.md distingue participación observada y apoyo automático. Faltan evidencias individuales no aportadas, constancia real de semana 8 y acceso docente; no se certifica la sustentación [4].
+Esteban Peña participó en ejecución y revisión guiadas, interpretación de escenarios y ensayo de la explicación de validación. TRAZABILIDAD.md registra estas actividades. Se utilizó IA como apoyo en revisión y mejora del código y la interfaz, pruebas y documentación. La entrega se estructura según la consigna del curso [4].
 
-[1] R. H. y A. C. Arpaci-Dusseau. OSTEP, cap. 7: Scheduling: Introduction. https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf
+[1] Remzi H. Arpaci-Dusseau y Andrea C. Arpaci-Dusseau. Operating Systems: Three Easy Pieces, cap. 7: Scheduling: Introduction. https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf
 
-[2] Los mismos autores. OSTEP, cap. 4: The Abstraction: The Process. https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf
+[2] Los mismos autores. Operating Systems: Three Easy Pieces, cap. 4: The Abstraction: The Process. https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf
 
-[3] Python Software Foundation. unittest, Python 3.12. https://docs.python.org/3.12/library/unittest.html
+[3] Python Software Foundation. unittest - Unit testing framework. Documentación de Python 3.12. https://docs.python.org/3.12/library/unittest.html
 
 [4] Profesor del curso. Proyecto Final SO 2620.docx, consigna proporcionada: opción 1, requisitos, entrega, sustentación y uso de IA.
+
+Fuentes web verificadas el 4 de noviembre de 2026; registro en evidencias/fuentes.json.

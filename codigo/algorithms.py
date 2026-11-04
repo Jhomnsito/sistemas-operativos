@@ -12,6 +12,7 @@ from models import Process, ProcessState, require_int
 class SimulationResult(list):
     """Lista de procesos terminados más trazas verificables de la ejecución."""
     def __init__(self, algorithm, processes, timeline, events, end_time):
+        """Agrupa procesos terminados, tramos CPU, estados y último instante."""
         super().__init__(processes)
         self.algorithm = algorithm
         self.timeline = timeline
@@ -19,6 +20,11 @@ class SimulationResult(list):
         self.end_time = end_time
 
     def metrics(self):
+        """Calcula medias, máximos, utilización, productividad, cambios y despachos.
+
+        La utilización cuenta desde t=0 y los cambios excluyen tramos ociosos.
+        Una carga vacía devuelve métricas cero; los tiempos son simulados.
+        """
         n = len(self)
         busy = sum(s['end'] - s['start'] for s in self.timeline if s['pid'] is not None)
         changes = sum(a['pid'] is not None and b['pid'] is not None and a['pid'] != b['pid']
@@ -40,6 +46,13 @@ class SimulationResult(list):
 
 
 def _simulate(process_list, quantum):
+    """Simula una CPU con eventos, FIFO y copias de la entrada.
+
+    quantum=None selecciona FCFS; un entero positivo limita los turnos de RR.
+    Devuelve SimulationResult sin modificar los Process originales.
+    Valida tipo y unicidad de PID. La creación es simulada y E/S no compite
+    por un dispositivo compartido. No recorre unidades ociosas una por una.
+    """
     source = list(process_list)
     if any(not isinstance(p, Process) for p in source):
         raise ValueError('La entrada debe contener objetos Process.')
@@ -51,6 +64,7 @@ def _simulate(process_list, quantum):
     now = 0
 
     def transition(p, state, time, reason):
+        """Cambia el estado del proceso y registra instante y causa de transición."""
         p.state = state
         events.append({'time': time, 'pid': p.pid, 'state': state.value, 'reason': reason})
 
@@ -59,6 +73,7 @@ def _simulate(process_list, quantum):
         heapq.heappush(pending, (p.arrival_time, next(sequence), p, 'Llegada'))
 
     def release_until(time):
+        """Admite llegadas y fines de E/S hasta time conservando los desempates."""
         # Desempate por orden de registro. A igual instante, las llegadas iniciales
         # preceden a los desbloqueos; ambos preceden a la reinserción por quantum.
         while pending and pending[0][0] <= time:
@@ -110,16 +125,24 @@ def _simulate(process_list, quantum):
 
 
 def simulate_fcfs(process_list):
-    """FCFS no expropiativo: conserva CPU hasta finalizar o bloquearse."""
+    """Devuelve FCFS no expropiativo: conserva CPU hasta terminar o bloquearse.
+
+    Recibe Process; no modifica la carga y rechaza PID duplicados.
+    """
     return _simulate(process_list, None)
 
 
 def simulate_round_robin(process_list, quantum):
+    """Devuelve RR para una carga Process y quantum entero positivo.
+
+    Reinserta al final de listos al agotar turno; lanza ValueError si Q es inválido.
+    """
     require_int('quantum', quantum, 1)
     return _simulate(process_list, quantum)
 
 
 def print_comparison_report(algorithm_name, completed_processes):
+    """Imprime métricas y traza de procesos terminados; acepta una carga vacía."""
     print(f'\nREPORTE: {algorithm_name}')
     print(f'{"PID":<6} {"Llegada":>8} {"CPU":>6} {"E/S":>6} {"Fin":>6} '
           f'{"Espera":>8} {"Retorno":>8} {"Respuesta":>10}')

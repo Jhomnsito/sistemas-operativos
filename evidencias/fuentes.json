@@ -1,0 +1,44 @@
+{
+  "verified_at": "2026-11-04T14:13:45.512771-05:00",
+  "sources": [
+    {
+      "id": 1,
+      "authors": "Remzi H. Arpaci-Dusseau y Andrea C. Arpaci-Dusseau",
+      "title": "Operating Systems: Three Easy Pieces. Capítulo 7: Scheduling: Introduction",
+      "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf",
+      "supports": "Políticas FIFO/FCFS y RR, quantum, retorno, respuesta y compromisos de planificación.",
+      "status": 200,
+      "resolved_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf",
+      "content_type": "application/pdf",
+      "sha256": "0912b1a34977a70704b921ecfdf0dd65300e038a3eb4e5e57b2d9c38f66b63c3"
+    },
+    {
+      "id": 2,
+      "authors": "Remzi H. Arpaci-Dusseau y Andrea C. Arpaci-Dusseau",
+      "title": "Operating Systems: Three Easy Pieces. Capítulo 4: The Abstraction: The Process",
+      "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf",
+      "supports": "Abstracción de proceso y estados listo, ejecución y bloqueo por E/S.",
+      "status": 200,
+      "resolved_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf",
+      "content_type": "application/pdf",
+      "sha256": "d4c7a5200fa104f6d5af7d845dc65b99b17ea55fb1fed6a151a7c4d1353bd6e8"
+    },
+    {
+      "id": 3,
+      "authors": "Python Software Foundation",
+      "title": "unittest - Unit testing framework. Python 3.12",
+      "url": "https://docs.python.org/3.12/library/unittest.html",
+      "supports": "Casos de prueba, aserciones, suites y ejecución automatizada.",
+      "status": 200,
+      "resolved_url": "https://docs.python.org/3.12/library/unittest.html",
+      "content_type": "text/html",
+      "sha256": "a7891bedfa9b5d8d99b9ef287c8010cf38a0468e3409b623438e37a4a4baf6d9"
+    }
+  ],
+  "local_source": {
+    "id": 4,
+    "title": "Proyecto Final SO 2620.docx",
+    "type": "Consigna del profesor proporcionada por el estudiante",
+    "sha256": "c302bda8f13f0a8e66263f94f32293d045c14e1d28b4383131781c669061c5f4"
+  }
+}

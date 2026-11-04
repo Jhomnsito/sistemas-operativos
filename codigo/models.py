@@ -3,6 +3,7 @@ from enum import Enum
 
 
 class ProcessState(Enum):
+    """Estados observables de un proceso dentro de la simulación de CPU."""
     NEW = 'NUEVO'
     READY = 'LISTO'
     RUNNING = 'EJECUCION'
@@ -11,12 +12,21 @@ class ProcessState(Enum):
 
 
 def require_int(name, value, minimum):
+    """Rechaza con ValueError un valor no entero, booleano o menor que minimum."""
     if type(value) is not int or value < minimum:
         raise ValueError(f'{name} debe ser un entero >= {minimum}.')
 
 
 class Process:
+    """Carga de un proceso y métricas acumuladas; no crea un proceso del SO."""
     def __init__(self, pid, arrival_time, burst_time, priority=0, io_events=None):
+        """Valida y crea un registro NUEVO sin tiempo de CPU consumido.
+
+        pid es único en cada carga; arrival_time >= 0 y burst_time >= 1.
+        io_events contiene pares (CPU acumulada, duración), crecientes y
+        anteriores al fin de CPU. priority se conserva pero no decide turnos.
+        Lanza ValueError cuando la especificación viola estas restricciones.
+        """
         require_int('pid', pid, 1)
         require_int('arrival_time', arrival_time, 0)
         require_int('burst_time', burst_time, 1)
@@ -52,9 +62,11 @@ class Process:
         self._ready_since = arrival_time
 
     def fresh_copy(self):
+        """Devuelve otro Process con igual carga y todas sus métricas reiniciadas."""
         return Process(self.pid, self.arrival_time, self.burst_time,
                        self.priority, self.io_events)
 
     def __repr__(self):
+        """Devuelve una descripción breve del PID, carga, CPU restante y estado."""
         return (f'P{self.pid}(Llegada={self.arrival_time}, CPU={self.burst_time}, '
                 f'Restante={self.remaining_time}, Estado={self.state.value})')

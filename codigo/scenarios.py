@@ -3,6 +3,10 @@ from models import Process
 
 
 def scenarios():
+    """Construye cargas nuevas (id, descripción, quantum RR, lista Process).
+
+    E1-E3 conservan las cargas originales; E4 cubre E/S y E5 tiempos ociosos.
+    """
     return [
         ('E1', 'Carga escalonada', 3,
          [Process(1, 0, 5), Process(2, 1, 3), Process(3, 2, 8), Process(4, 3, 6)]),

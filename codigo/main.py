@@ -11,6 +11,7 @@ from scenarios import scenarios
 
 
 def write_csv(path, rows):
+    """Escribe registros no vacíos como CSV UTF-8 con cabecera y orden de campos."""
     with path.open('w', encoding='utf-8', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
         writer.writeheader()
@@ -18,6 +19,11 @@ def write_csv(path, rows):
 
 
 def main(argv=None):
+    """Ejecuta cinco escenarios y sensibilidad de Q; exporta CSV/JSON a --output.
+
+    Devuelve 0 al completar y 1 ante errores de entrada o escritura.
+    argv permite invocación desde pruebas o desde la línea de comandos.
+    """
     parser = argparse.ArgumentParser(description='Comparar FCFS y Round Robin con tiempos simulados.')
     parser.add_argument('--output', type=Path, default=Path('evidencias'), help='Carpeta de resultados')
     args = parser.parse_args(argv)
